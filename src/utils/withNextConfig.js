@@ -1,6 +1,6 @@
 import path from 'path';
 
-import getBundleAnalyzer from '@next/bundle-analyzer';
+// import getBundleAnalyzer from '@next/bundle-analyzer';
 import getTranspileModules from 'next-transpile-modules';
 import { PHASE_DEVELOPMENT_SERVER } from 'next/constants';
 
@@ -109,11 +109,12 @@ const withDevelopmentConfig = nextConfig => {
 
 const withProductionConfig = nextConfig => {
   const customConfig = withCustomConfig(nextConfig, false);
-  const withBundleAnalyzer = getBundleAnalyzer({
-    enabled: process.env.ANALYZE === 'true'
-  });
+  // const withBundleAnalyzer = getBundleAnalyzer({
+  //   enabled: process.env.ANALYZE === 'true'
+  // });
 
-  return withBundleAnalyzer(customConfig);
+  // return withBundleAnalyzer(customConfig);
+  return customConfig;
 };
 
 export const withNextConfig = nextConfig => phase => {
