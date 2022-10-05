@@ -4,7 +4,6 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import url from '@rollup/plugin-url';
 import glob from 'glob';
 import del from 'rollup-plugin-delete';
-import ignoreImport from 'rollup-plugin-ignore-import';
 
 const jsConfig = {
   input: glob.sync('src/index.js'),
@@ -25,9 +24,6 @@ const jsConfig = {
   preserveEntrySignatures: 'allow-extension',
   plugins: [
     del({ targets: 'dist/*' }),
-    ignoreImport({
-      extensions: ['.css']
-    }),
     nodeResolve(),
     commonjs({
       include: /node_modules/
