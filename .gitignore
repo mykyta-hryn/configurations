@@ -7,6 +7,9 @@
 /coverage
 test-report.xml
 
+# production
+/dist
+
 # misc
 .DS_Store
 *.pem

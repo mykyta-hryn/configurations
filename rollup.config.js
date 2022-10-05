@@ -3,12 +3,12 @@ import path from 'path';
 import alias from '@rollup/plugin-alias';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 import url from '@rollup/plugin-url';
 import svgr from '@svgr/rollup';
 import glob from 'glob';
 import del from 'rollup-plugin-delete';
 import ignoreImport from 'rollup-plugin-ignore-import';
-import resolve from 'rollup-plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 const jsConfig = {
@@ -50,7 +50,7 @@ const jsConfig = {
     commonjs({
       include: /node_modules/
     }),
-    resolve(),
+    nodeResolve(),
     url(),
     svgr({
       icon: true,
